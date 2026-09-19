@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банкетный зал «Вальс» — аренда для свадеб и корпоративов</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">ВАЛЬС</div>
+        <nav>
+            <a href="#halls">Залы</a>
+            <a href="#events">Мероприятия</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+        <a href="#form" class="btn">Оставить заявку</a>
+        <button class="burger" id="burger">&#9776;</button>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <span class="close" id="mobileClose">&times;</span>
+        <a href="#halls">Залы</a>
+        <a href="#events">Мероприятия</a>
+        <a href="#contacts">Контакты</a>
+        <a href="#form">Оставить заявку</a>
+    </div>
+
+    <section class="hero">
+        <h1>Ваш праздник в <em>атмосфере</em> изысканности</h1>
+        <p>Три зала от 40 до 250 гостей, авторская кухня, живая музыка и безупречный сервис.</p>
+        <a href="#form">Оставить заявку</a>
+    </section>
+
+    <section class="features">
+        <div class="reveal">
+            <h3>До 250 гостей</h3>
+            <p>Просторные залы с возможностью объединения</p>
+        </div>
+        <div class="reveal">
+            <h3>Авторская кухня</h3>
+            <p>Банкетное меню от шефа</p>
+        </div>
+        <div class="reveal">
+            <h3>Декор и флористика</h3>
+            <p>Оформим зал в вашей стилистике</p>
+        </div>
+        <div class="reveal">
+            <h3>Парковка</h3>
+            <p>Собственная парковка и все удобства</p>
+        </div>
+    </section>
+
+    <section id="halls">
+        <h2>Наши залы</h2>
+        <div class="gallery">
+            <div class="hall reveal" data-images='[
+                "https://picsum.photos/1400/1000?random=11",
+                "https://picsum.photos/1400/1000?random=12",
+                "https://picsum.photos/1400/1000?random=13"
+            ]'>
+                <img src="https://picsum.photos/800/1000?random=1" alt="Большой зал">
+                <h3>Большой зал</h3>
+                <p>до 80 гостей</p>
+            </div>
+            <div class="hall reveal" data-images='[
+                "https://picsum.photos/1400/1000?random=21",
+                "https://picsum.photos/1400/1000?random=22",
+                "https://picsum.photos/1400/1000?random=23"
+            ]'>
+                <img src="https://picsum.photos/800/1000?random=2" alt="Малый зал">
+                <h3>Малый зал</h3>
+                <p>до 40 гостей</p>
+            </div>
+            <div class="hall reveal" data-images='[
+                "https://picsum.photos/1400/1000?random=31",
+                "https://picsum.photos/1400/1000?random=32",
+                "https://picsum.photos/1400/1000?random=33"
+            ]'>
+                <img src="https://picsum.photos/800/1000?random=3" alt="Банкетный зал">
+                <h3>Банкетный зал</h3>
+                <p>до 120 гостей</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="events">
+        <h2>Что мы организуем</h2>
+        <ul>
+            <li>Свадьбы</li>
+            <li>Корпоративы</li>
+            <li>Юбилеи</li>
+            <li>Частные приёмы</li>
+        </ul>
+    </section>
+
+    <section id="contacts">
+        <div class="contact-info">
+            <h2>Забронируйте дату</h2>
+            <p>Оставьте заявку — перезвоним в течение 15 минут.</p>
+            <p>Телефон: +7 (999) 123-45-67</p>
+            <p>Почта: hall@vals.ru</p>
+            <p>Адрес: г. Москва, ул. Примерная, 12</p>
+        </div>
+
+        <form id="form" action="https://formspree.io/f/mvkggjro" method="POST">
+            <h3>Оставить заявку</h3>
+
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+
+            <label for="phone">Телефон *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__" autocomplete="tel">
+            <div class="field-error" id="phoneError"></div>
+
+            <label for="event">Тип мероприятия</label>
+            <select id="event" name="event">
+                <option>Свадьба</option>
+                <option>Корпоратив</option>
+                <option>Юбилей</option>
+                <option>Частный приём</option>
+            </select>
+
+            <label for="date">Желаемая дата</label>
+            <input type="date" id="date" name="date" min="">
+            <div class="field-error" id="dateError"></div>
+
+            <label for="comment">Комментарий</label>
+            <textarea id="comment" name="comment" placeholder="Количество гостей, пожелания..."></textarea>
+
+            <button type="submit">Отправить заявку</button>
+            <div class="success" id="success">Спасибо! Заявка отправлена — мы свяжемся с вами.</div>
+        </form>
+    </section>
+
+    <footer>
+        <div class="logo">ВАЛЬС</div>
+        <p>&copy; 2025 Банкетный зал «Вальс». Все права защищены.</p>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lb-close" id="lbClose">&times;</span>
+        <button class="lb-arrow lb-prev" id="lbPrev">&#8249;</button>
+        <div class="lb-stage">
+            <img src="" alt="" id="lbImg">
+            <div class="lb-counter" id="lbCounter">1 / 1</div>
+        </div>
+        <button class="lb-arrow lb-next" id="lbNext">&#8250;</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
